@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { PassengerDashboardService } from '../../passenger-dashboard.service';
+
 import { Passenger } from '../../models/passenger.interface';
 
 @Component({
@@ -46,32 +49,11 @@ export class PassengerDashboardComponent implements OnInit{
     this.name = value;
   }
   passengers: Passenger[];
-  constructor() {}
+  constructor(private passengerService: PassengerDashboardService) {}
   ngOnInit(){
-    console.log('ngOnInit');
+    // console.log('ngOnInit');
     this.title = 'Passenger Dashboard Component';
-    this.passengers = [
-      {
-        id: 1,
-        name: 'jerome',
-        checkedIn: true
-      },
-      {
-        id: 2,
-        name: 'jessica',
-        checkedIn: false
-      },
-      {
-        id: 3,
-        name: 'tammy',
-        checkedIn: true
-      },
-      {
-        id: 4,
-        name: 'benny',
-        checkedIn: false
-      }
-    ]
+    this.passengers = this.passengerService.getPassengers();
   }
   handleEdit(event: Passenger) {
     // console.log(event);
