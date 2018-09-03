@@ -46,18 +46,22 @@ export class PassengerDetailComponent implements OnChanges {
   constructor() {}
 
   ngOnChanges(changes) {
-    // console.log(changes);
+    console.log(changes);
+    // debugger;
     if(changes.detail){
+      // debugger;
       this.detail = Object.assign({}, changes.detail.currentValue);
     }
   }
 
   onNameChange(value: string) {
+    // debugger;
     console.log('Value:', value);
     this.detail.name = value;
   }
 
   toggleEdit() {
+    // debugger;
     if(this.editing){
       this.edit.emit(this.detail);
     }
@@ -65,6 +69,7 @@ export class PassengerDetailComponent implements OnChanges {
   }
 
   onRemove() {
+    // debugger;
     this.remove.emit(this.detail);
   }
 }

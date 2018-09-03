@@ -17,7 +17,7 @@ import { Passenger } from '../../models/passenger.interface';
       <br/>  
       <br/>  
     </div>
-  
+
   `
 })
 
@@ -29,6 +29,9 @@ export class PassengerCountComponent {
     return this.items.filter((passenger: Passenger) => {
       return passenger.checkedIn;
     }).length;
+
+    // above function as shorthand tS
+    // return this.items.filter((passenger: Passenger) => passenger.checkedIn).length:
   }
   constructor() {}
 }

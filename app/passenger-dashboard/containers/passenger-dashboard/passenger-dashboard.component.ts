@@ -75,8 +75,10 @@ export class PassengerDashboardComponent implements OnInit{
   }
   handleEdit(event: Passenger) {
     // console.log(event);
+    // debugger;
     this.passengers = this.passengers.map((passenger: Passenger) => {
       if(passenger.id === event.id){
+        // debugger;
         passenger = Object.assign({}, passenger, event);
       }
       return passenger;
@@ -85,6 +87,7 @@ export class PassengerDashboardComponent implements OnInit{
   }
   handleRemove(event: Passenger) {
     // console.log(event);
+    // debugger;
     this.passengers = this.passengers.filter((passenger: Passenger) => {
       //  event in this case will be one of the passenger objects
       return passenger.id !== event.id;
