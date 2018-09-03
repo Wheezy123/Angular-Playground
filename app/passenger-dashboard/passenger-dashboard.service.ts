@@ -22,4 +22,20 @@ export class PassengerDashboardService {
         return response.json();
       });
   }
+
+  updatePassenger(passenger: Passenger): Observable<Passenger>{
+    return this.http
+      .put(`${PASSENGER_API}/${passenger.id}`, passenger)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
+
+  removePassenger(passenger: Passenger): Observable<Passenger>{
+    return this.http
+      .delete(`${PASSENGER_API}/${passenger.id}`)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
 }
