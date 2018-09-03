@@ -8,6 +8,10 @@ import { Passenger } from '../../models/passenger.interface';
   selector: 'passenger-dashboard',
   styleUrls: ['passenger-dashboard.component.scss'],
   template: `
+
+    <div *ngFor="let passenger of passengers">
+      {{passenger.name}}
+    </div>
     <div>
       <h1 [innerHTML]="title"></h1>
       <h1> {{ title }}</h1>
@@ -61,7 +65,13 @@ export class PassengerDashboardComponent implements OnInit{
   ngOnInit(){
     // console.log('ngOnInit');
     this.title = 'Passenger Dashboard Component';
-    this.passengers = this.passengerService.getPassengers();
+    this.passengerService.getPassengers()
+    // .subscribe((data: Passenger[]) => this.passengers = data);
+    // longhand of above single line statement
+    .subscribe((data: Passenger[]) => {
+      // console.log('Data', data);
+      this.passengers = data;
+    });
   }
 
   handleEdit(event: Passenger) {
@@ -76,7 +86,7 @@ export class PassengerDashboardComponent implements OnInit{
     });
     console.log(this.passengers);
   }
-  
+
   handleRemove(event: Passenger) {
     // console.log(event);
     // debugger;
