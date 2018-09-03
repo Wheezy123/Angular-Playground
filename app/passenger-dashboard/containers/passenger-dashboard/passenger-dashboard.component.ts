@@ -68,6 +68,12 @@ export class PassengerDashboardComponent implements OnInit{
     this.passengerService.getPassengers()
     // .subscribe((data: Passenger[]) => this.passengers = data);
     // longhand of above single line statement
+
+    // *use .then instead of .subscribe to work with promises
+    // .then((data: Passenger[]) => {
+    //   // console.log('Data', data);
+    //   this.passengers = data;
+    // });
     .subscribe((data: Passenger[]) => {
       // console.log('Data', data);
       this.passengers = data;
