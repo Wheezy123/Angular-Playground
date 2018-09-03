@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Passenger } from './models/passenger.interface';
 
@@ -24,8 +24,19 @@ export class PassengerDashboardService {
   }
 
   updatePassenger(passenger: Passenger): Observable<Passenger>{
+    // create custom http headers here, ** must import Headers from angular/http
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    // create custom request options here, ** must import RequestOptions from angular/http 
+    let options = new RequestOptions({
+      // referring to headers defined above
+      headers: headers
+    });
+
     return this.http
-      .put(`${PASSENGER_API}/${passenger.id}`, passenger)
+      .put(`${PASSENGER_API}/${passenger.id}`, passenger, options)
       .map((response: Response) => {
         return response.json();
       });
