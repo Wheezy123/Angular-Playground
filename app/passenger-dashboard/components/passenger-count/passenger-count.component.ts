@@ -10,8 +10,8 @@ import { Passenger } from '../../models/passenger.interface';
       (BEGIN Count component)
       <h3>Airline Passengers!!</h3>
       <div>
-        Total passengers: {{ items.length }}
-        Total checked in: {{checkedInCount()}} / {{items.length}}
+        Total passengers: {{ items?.length }}
+        Total checked in: {{checkedInCount()}} / {{items?.length}}
       </div>
       (END Count component)
       <br/>  
