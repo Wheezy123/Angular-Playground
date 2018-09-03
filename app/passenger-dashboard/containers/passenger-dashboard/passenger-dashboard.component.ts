@@ -39,22 +39,31 @@ export class PassengerDashboardComponent implements OnInit{
     this.name = event.target.value;
     // console.log(event);
   }
+
   handleInput(event: any){
     this.name = event.target.value;
   }
+
   handleClick(){
     this.name = 'Wheezy';
   }
+
   handleChange(value: string){
     this.name = value;
   }
+
   passengers: Passenger[];
-  constructor(private passengerService: PassengerDashboardService) {}
+
+  constructor(private passengerService: PassengerDashboardService) {
+
+  }
+
   ngOnInit(){
     // console.log('ngOnInit');
     this.title = 'Passenger Dashboard Component';
     this.passengers = this.passengerService.getPassengers();
   }
+
   handleEdit(event: Passenger) {
     // console.log(event);
     // debugger;
@@ -67,6 +76,7 @@ export class PassengerDashboardComponent implements OnInit{
     });
     console.log(this.passengers);
   }
+  
   handleRemove(event: Passenger) {
     // console.log(event);
     // debugger;
