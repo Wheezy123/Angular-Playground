@@ -93,6 +93,10 @@ import { Baggage } from '../../models/baggage.interface';
       <div>{{form.value | json }}</div>
       <div>Valid: {{form.valid | json }}</div>
       <div>Invalid: {{form.valid | json }}</div>
+
+      <button type="submit" [disabled]="form.invalid">
+        Update Passenger
+      </button>
     </form>
 
   `
