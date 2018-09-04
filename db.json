@@ -3,32 +3,38 @@
     {
       "id": 1,
       "name": "jerome johnson",
-      "checkedIn": true
+      "checkedIn": true,
+      "baggage" : "" 
     },
     {
       "id": 2,
       "name": "jessica",
-      "checkedIn": false
+      "checkedIn": false,
+      "baggage" : ""
     },
     {
       "id": 3,
       "name": "tammy",
-      "checkedIn": true
+      "checkedIn": true,
+      "baggage" : ""
     },
     {
       "id": 4,
       "name": "benny",
-      "checkedIn": false
+      "checkedIn": false,
+      "baggage" : ""
     },
     {
       "id": 5,
       "name": "Jason",
-      "checkedIn": true
+      "checkedIn": true,
+      "baggage" : ""
     },
     {
       "id": 6,
       "name": "molly",
-      "checkedIn": true
+      "checkedIn": true,
+      "baggage" : ""
     }
   ]
 }
