@@ -34,6 +34,19 @@ export class PassengerDashboardService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
+  // Observable using rxjs map
+  getPassenger(id: number): Observable<Passenger>{
+    // debugger;
+    return this.http
+      .get( `${PASSENGER_API}/${id}`)
+      .map((response: Response) => {
+        // debugger;
+        return response.json();
+      })
+      // error handling below
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
   // // *Promise using rxjs promise
   // getPassengers(): Promise<Passenger[]>{
   //   return this.http
@@ -98,12 +111,12 @@ export class PassengerDashboardService {
   }
 
   // *Promise using rxjs promise
-//   removePassenger(passenger: Passenger): Promise<Passenger>{
-//     return this.http
-//       .delete(`${PASSENGER_API}/${passenger.id}`)
-//       .toPromise()
-//       .then((response: Response) => {
-//         return response.json();
-//       });
-//   }
+  // removePassenger(passenger: Passenger): Promise<Passenger>{
+  //   return this.http
+  //     .delete(`${PASSENGER_API}/${passenger.id}`)
+  //     .toPromise()
+  //     .then((response: Response) => {
+  //       return response.json();
+  //     });
+  // }
 }
