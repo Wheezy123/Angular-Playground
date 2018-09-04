@@ -9,7 +9,8 @@ import { HomeComponent } from './home.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  // { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'passengers', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
 
