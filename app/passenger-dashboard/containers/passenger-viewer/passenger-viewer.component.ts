@@ -8,9 +8,8 @@ import { Passenger } from '../../models/passenger.interface';
   styleUrls: ['passenger-viewer.component.scss'],
   template: `
     <div>
-      {{ passsenger | json }}
+      {{passenger | json }}
     </div>
-    {{passenger | json }}
   `
 
 })
@@ -23,13 +22,14 @@ export class PassengerViewerComponent implements OnInit {
   }
 
   ngOnInit(){
-    debugger;
+    // debugger;
     this.passengerService
     .getPassenger(1)
     .subscribe((data: Passenger) => {
-      debugger;
-      this.passenger = data
-      debugger;
+      // debugger;
+      this.passenger = data;
+      // debugger;
     });
+    // debugger;
   }
 }
