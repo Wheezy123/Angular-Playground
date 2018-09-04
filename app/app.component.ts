@@ -10,6 +10,12 @@ import { Component } from '@angular/core';
   // `
   template: `
     <div class="app">
+      <a routerLink="/">
+        Home
+      </a>
+      <a routerLink="/oops">
+        404
+      </a>
       <router-outlet></router-outlet>
     </div>    
   `
