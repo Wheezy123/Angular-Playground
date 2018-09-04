@@ -2,7 +2,8 @@ export interface Passenger {
   id: number,
   name: string,
   checkedIn: boolean,
-  baggage: string
+  baggage: string,
+  checkInDate?: number
 }
 
 // export interface Child {
