@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
   // `
   template: `
     <div class="app">
-      <passenger-viewer></passenger-viewer>
+      <router-outlet></router-outlet>
     </div>    
   `
   // TEMPLATEURL is optional or could use above inline template
